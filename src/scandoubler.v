@@ -19,6 +19,7 @@
 
 // TODO: Delay vsync one line
 
+`default_nettype none
 module scandoubler #(parameter HALF_DEPTH=1)
 (
 	// system interface
@@ -193,7 +194,7 @@ assign vb_out = vbo[3];
 assign hb_out = hbo[6];
 
 assign r_out = (vb_out | hb_out) ? 4'b0 : r_d;
-assign g_out = (vb_out | hb_out) ? 4'b0 : r_g;
-assign b_out = (vb_out | hb_out) ? 4'b0 : r_b;
+assign g_out = (vb_out | hb_out) ? 4'b0 : g_d;
+assign b_out = (vb_out | hb_out) ? 4'b0 : b_d;
 
 endmodule

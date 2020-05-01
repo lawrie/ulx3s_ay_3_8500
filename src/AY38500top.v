@@ -55,9 +55,9 @@ always @(posedge clk_sys) begin
 end
 
 // Options
-wire angle = 1;
-wire size = 1;
-wire speed = 0;
+wire angle = 0;
+wire size = 0;
+wire speed = 1;
 wire autoserve = 1;
 
 //   0 : Mystery game
@@ -68,7 +68,7 @@ wire autoserve = 1;
 //   5 : Practice
 //   6 : Rifle 1
 //   7 : Rifle 2
-reg [7:0] gameSelect = 1;
+reg [7:0] gameSelect = 1 << 0;
 
 // Vertical position of player on 256x256 field
 reg [8:0] player1pos = 8'd128;
@@ -89,7 +89,7 @@ reg [8:0] player2cap = 0;
 //   6 - Christmas: Mono with red/green paddles
 //   7 - Marksman: Based on footage of the Coleco Telstar Marksman
 //   8 - Las Vegas: Based on footage of Tele-spiel Las Vegas
-reg [3:0]  colorOption = 0;
+reg [3:0]  colorOption = 8;
 
 // Inputs
 wire [10:0] ps2_key;
